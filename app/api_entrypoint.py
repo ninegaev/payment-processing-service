@@ -17,7 +17,7 @@ async def lifespan(app: FastAPI):
         await task
     except asyncio.CancelledError:
         pass
-    await broker.close()
+    await broker.stop()
 
 
 api_app.router.lifespan_context = lifespan

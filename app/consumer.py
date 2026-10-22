@@ -128,7 +128,7 @@ async def main():
             await webhook_task
         except asyncio.CancelledError:
             pass
-        await broker.close()
+        await broker.stop()
 
 if __name__ == "__main__":
     asyncio.run(main())
